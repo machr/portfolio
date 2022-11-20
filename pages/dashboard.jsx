@@ -1,3 +1,4 @@
+import Layout from '../components/Layout';
 import { getTopTracks } from '../lib/spotify';
 
 export async function getStaticProps() {
@@ -32,13 +33,13 @@ const Dashboard = ({ tracks }) => {
 
 
   return (
-    <>
+    <Layout>
       <h1 className="bold text-3xl md:text-5xl">Dashboard</h1>
       <ol className='flex flex-col'>
         {displayTracks}
       </ol>
 
-    </>
+    </Layout>
   )
 }
 
