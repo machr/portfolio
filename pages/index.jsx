@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react';
-
 import Head from 'next/head'
 import Layout from '../components/Layout'
 
 const Home = () => {
   const languages = ['Hola', 'Guten Tag', 'Salve', 'olá', 'nǐn hǎo', 'Hej', 'Hello', 'Salut'];
-
-  const [greeting, setGreeting] = useState()
+  const [language, setLanguage] = useState(null)
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     const language = languages[Math.floor(Math.random() * languages.length)]
-    setGreeting(language)
+    setLanguage(language)
+    setLoading(false)
   }, [])
 
-  // The language shows an empty string quickly while being hydrated. How to fix??
+  if (isLoading) return <p>Loading...</p>
 
   return (
     <Layout>
@@ -23,8 +24,9 @@ const Home = () => {
         <title>Mark Christiansen | Software Developer</title>
       </Head>
       <header>
-        <h2>{greeting}! I'm Mark, a developer based in Melbourne, Australia</h2>
-
+        {language && (
+          <h2>{language}! I'm Mark, a developer based in Melbourne, Australia</h2>
+        )}
         <p>
           In 2017, I decided that I wanted to become serious about becoming a full
           time developer. I joined the Web Development bootcamp at General Assembly
