@@ -1,9 +1,8 @@
-import { NextPage } from "next";
 
-const UsesPage: NextPage = () => {
+const UsesPage = () => {
   return (
-    <h1>Uses THis</h1>
+    <h1>Uses This</h1>
   )
 }
 
-export default UsesPage
+export default UsesPage;

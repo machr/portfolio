@@ -3,12 +3,12 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 
 const Home = () => {
-  const languages = ['Hola', 'Guten Tag', 'Salve', 'olá', 'nǐn hǎo', 'Hej', 'Hello', 'Salut'];
   const [language, setLanguage] = useState(null)
   const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true)
+    const languages = ['Hola', 'Guten Tag', 'Salve', 'olá', 'nǐn hǎo', 'Hej', 'Hello', 'Salut'];
     const language = languages[Math.floor(Math.random() * languages.length)]
     setLanguage(language)
     setLoading(false)
