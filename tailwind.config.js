@@ -12,6 +12,9 @@ module.exports = {
         primary: ['var(--noto-font)', ...fontFamily.sans],
         sans: ['var(--noto-font)', ...fontFamily.sans],
       },
+      maxHeight: {
+        hero: '90vh'
+      }
     },
   },
   plugins: [],

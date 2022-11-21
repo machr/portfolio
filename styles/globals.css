@@ -8,11 +8,15 @@ body {
   margin: 0;
 }
 
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 * {
   box-sizing: border-box;
+}
+
+.hero {
+  height: 80vh;
 }
